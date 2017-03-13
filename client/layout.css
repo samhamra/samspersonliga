@@ -1,0 +1,26 @@
+/* CSS declarations go here */
+
+html {
+    position: relative;
+    min-height: 100%;
+    max-width: 100%;
+}
+
+body {
+    margin-bottom: 30px;
+    overflow-x: hidden;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+input.error {
+    background-color: rgb(255, 231, 231);
+}
+
+textarea.error {
+    background-color: rgb(255, 231, 231);
+}

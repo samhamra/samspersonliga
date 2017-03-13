@@ -1,0 +1,40 @@
+table, th, td {
+  text-align: center;
+  border: solid 2px #e6e6e6;
+}
+
+
+.forumTopicFont {
+  font-size: 200%;
+  color: black;
+}
+@media screen and (max-width: 767px) {
+  .topicContainer {
+    padding-top: 150px;
+  }
+  .createTopicContainer {
+    padding-top: 130px
+  }
+  .forumContainer {
+    padding-top: 130px
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .topicContainer {
+    padding-top: 100px;
+  }
+  .createTopicContainer {
+    padding-top: 50px
+  }
+  .forumContainer {
+    padding-top: 50px
+  }
+}
+
+
+
+.borderBlack {
+  border: solid 3px #e6e6e6;
+  padding: 50px;
+}

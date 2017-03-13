@@ -1,0 +1,33 @@
+<template name="chat">
+<div class="container-fluid" style="padding-top: 100px">
+  <div class="row">
+    <h1 style="text-align: center">Chat</h1>
+  </div>
+  <div class="row" >
+    <div class="col-sm-offset-2 col-sm-6" style="padding: 0; border: black 1px solid;">
+      <div id="chatboard" style="width: 100%; height: 100px; overflow: auto">
+        {{#each testing}}
+          <div>{{username}}: {{message}}</div>
+          {{/each}}
+      </div>
+    </div>
+      <div class="col-sm-2" style="padding: 0; border: black 1px solid; text-align: center">
+        <div class="chatUsers" style="height: 100px; overflow:auto">
+            {{#each onlineUsers}}
+              <strong>{{username}}</strong><br>
+              {{/each}}
+      </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-8" style="padding: 0; border: black 1px solid;">
+
+          <form style="display: flex; flex-direction: column" name="sendMessage">
+         <textarea style="width: 100%;" rows= "1" class="message" name="message" type="text"></textarea>
+       </form>
+      </div>
+    </div>
+  </div>
+
+
+</template>

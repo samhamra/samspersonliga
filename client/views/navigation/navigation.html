@@ -1,0 +1,24 @@
+<template name="navigation">
+  <nav class="navbar {{#if isMain}} navbar-transparent {{else}} navbar-custom {{/if}} navbar-fixed-top mynavbar">
+    <div class="container-fluid">
+
+      <ul class="nav navbar-nav">
+        <li><a href="{{pathFor route='main'}}" class="navbar-brand"> Main </a></li>
+        <li class="navPaddingLeft"><a href="{{pathFor route='forum'}}" class="navbar-brand">Forum</a></li>
+        {{# if currentUser}}
+          <li class="navPaddingLeft"><a href="{{pathFor route='chat'}}" class="navbar-brand">Chat</a></li>
+        {{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navPaddingRight"><a href="{{pathFor route='contact'}}" class="navbar-brand">Contact</a></li>
+        {{#if currentUser}}
+        <li class="navPaddingRight"><a href="{{pathFor route='account'}}" class="navbar-brand"><span class="glyphicon glyphicon-user"></span>Account</a></li>
+        <li><a class="logout navbar-brand"><span class="glyphicon glyphicon-log-out" ></span>Log out</a></li>
+        {{else}}
+        <li class="navPaddingRight"><a href="{{pathFor route='login'}}" class="navbar-brand"><span class="glyphicon glyphicon-user"></span>Log in</a></li>
+        <li><a href="{{pathFor route='register'}}" class="navbar-brand"><span class="glyphicon glyphicon-log-in"></span>Register</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+</template>
