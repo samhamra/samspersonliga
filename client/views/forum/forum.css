@@ -3,7 +3,6 @@ table, th, td {
   border: solid 2px #e6e6e6;
 }
 
-
 .forumTopicFont {
   font-size: 200%;
   color: black;
@@ -31,8 +30,6 @@ table, th, td {
     padding-top: 50px
   }
 }
-
-
 
 .borderBlack {
   border: solid 3px #e6e6e6;

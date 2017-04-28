@@ -2,27 +2,23 @@ import { Meteor } from 'meteor/meteor';
 import { Random } from 'meteor/random';
 import Streamer from '/imports/stream.js';
 Meteor.startup(() => {
-    process.env.MAIL_URL = "smtp://pebos933spam%40gmail.com:SamPeter@smtp.gmail.com:465/";
     Streamer.allowRead('logged');
     Streamer.allowWrite('logged');
     Streamer.allowEmit('logged');
-
-    Meteor.users.remove({});
-    Topics.remove({});
-    var uid = Accounts.createUser({
-        username: 'admin',
-        password: 'admin',
-        profile: {
-            name: 'GOD'
-        }
-    })
-    Roles.setUserRoles(uid, 'admin');
+    if(!Meteor.users.findOne({username: 'admin'})) {
+      var uid = Accounts.createUser({
+          username: 'admin',
+          password: 'admin',
+          profile: {
+              name: 'GOD'
+          }
+      })
+      Roles.setUserRoles(uid, 'admin');
+    }
 })
 
 Meteor.methods({
     'createAUser': function(username, password) {
-        console.log(username);
-        console.log(password);
         var uid = Accounts.createUser({
             username: username,
             password: password,
@@ -138,17 +134,5 @@ Meteor.methods({
                 route: ""
             }
         })
-    },
-    sendEmail: function(from, subject, text) {
-        check([from, subject, text], [String]);
-        // Let other method calls from the same client start running,
-        // without waiting for the email sending to complete.
-        this.unblock();
-        Email.send({
-            to: 'pebos933spam@gmail.com',
-            from: from,
-            subject: subject + " " + from,
-            text: text
-        });
     }
 });
